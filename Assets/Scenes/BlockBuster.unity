@@ -4377,7 +4377,7 @@ Transform:
   m_GameObject: {fileID: 186625654}
   serializedVersion: 2
   m_LocalRotation: {x: -0.124481715, y: 0.00881361, z: -0.0009931584, w: -0.99218225}
-  m_LocalPosition: {x: -0.06, y: 1.53, z: -0.08}
+  m_LocalPosition: {x: -0.06, y: 1.53, z: -21.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35687,8 +35687,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CannonAimCam: {fileID: 1133007030}
   bullettimeCam: {fileID: 481437172}
-  CannonBall: {fileID: 35853723419827773, guid: c15b139705e86384ba1fbda7f53e7ddc,
-    type: 3}
 --- !u!4 &2138431837
 Transform:
   m_ObjectHideFlags: 0
@@ -35735,7 +35733,7 @@ PrefabInstance:
     - target: {fileID: 2446105498382128021, guid: b11e274855eab674dbb027d1ac915353,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -21.4
       objectReference: {fileID: 0}
     - target: {fileID: 2446105498382128021, guid: b11e274855eab674dbb027d1ac915353,
         type: 3}
@@ -35820,7 +35818,7 @@ PrefabInstance:
     - target: {fileID: 3909343899220488765, guid: b11e274855eab674dbb027d1ac915353,
         type: 3}
       propertyPath: shootForce
-      value: 3000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3909343899220488765, guid: b11e274855eab674dbb027d1ac915353,
         type: 3}
@@ -35828,6 +35826,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 35853723419827773, guid: c15b139705e86384ba1fbda7f53e7ddc,
         type: 3}
+    - target: {fileID: 3909343899220488765, guid: b11e274855eab674dbb027d1ac915353,
+        type: 3}
+      propertyPath: cameraManager
+      value: 
+      objectReference: {fileID: 2138431836}
     - target: {fileID: 7848636689501049734, guid: b11e274855eab674dbb027d1ac915353,
         type: 3}
       propertyPath: m_LocalPosition.x
