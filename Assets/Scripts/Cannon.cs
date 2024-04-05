@@ -6,13 +6,15 @@ public class Cannon : MonoBehaviour
 {
     public CameraManager cameraManager;
 
-    public GameObject spherePrefab; // Assign a prefab of the sphere in the inspector
-    public Transform shootPoint; // The point from where the sphere will be shot
+    public GameObject spherePrefab; 
+    public Transform shootPoint; 
     public float shootForce = 1000f;
+    public GameObject fireFx;
+    public AudioClip ShootClip;
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) // Default for left mouse click
+        if (Input.GetButtonDown("Fire1")) 
         {
             Shoot();
         }
@@ -20,6 +22,7 @@ public class Cannon : MonoBehaviour
 
     void Shoot()
     {
+
         GameObject cannonBallInstance = Instantiate(spherePrefab, shootPoint.position, shootPoint.rotation);
         Rigidbody rb = cannonBallInstance.GetComponent<Rigidbody>();
         if (rb == null)
@@ -28,15 +31,21 @@ public class Cannon : MonoBehaviour
         }
         rb.AddForce(shootPoint.forward * shootForce);
 
-        // Notify CameraManager
+        if (fireFx != null)
+        {
+            Instantiate(fireFx, shootPoint.position, shootPoint.rotation);
+        }
+        
         if (cameraManager != null)
         {
             cameraManager.TrackObject(cannonBallInstance);
         }
+        if (ShootClip != null) AudioSource.PlayClipAtPoint(ShootClip,shootPoint.position);
+        
     }
     void OnCollisionEnter(Collision collision)
     {
-        // Your existing collision logic here
+        
 
         // Find and notify the CameraManager to stop tracking
         CameraManager cameraManager = FindObjectOfType<CameraManager>();

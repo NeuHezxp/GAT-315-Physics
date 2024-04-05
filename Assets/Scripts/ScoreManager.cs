@@ -1,13 +1,13 @@
 using UnityEngine;
+using TMPro; // Include the TextMeshPro namespace
 
-public static class ScoreManager
+public class ScoreManager : MonoBehaviour
 {
-    public static int score = 0;
+    public static int Score = 0; // Static score so it can be easily accessed from other scripts without needing a reference to the ScoreManager
+    public TextMeshProUGUI scoreText; 
 
-    public static void AddPoints(int pointsToAdd)
+    void Update()
     {
-        score += pointsToAdd;
-        Debug.Log("Current Score: " + score); // For testing purposes
-        //TODO Update UI 
+        scoreText.text = "Score: " + Score; // Update the score display every frame
     }
 }

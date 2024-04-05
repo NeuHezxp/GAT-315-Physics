@@ -8,12 +8,11 @@ public class Block : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Sphere")) 
+        if (collision.gameObject.CompareTag("Sphere") ) 
         {
-            ScoreManager.AddPoints(points);
+            ScoreManager.Score += 10;
 
-            // Instantiate the hit effect at the point of collision
-            // The rotation is set to Quaternion.identity to keep the effect's default rotation
+          
             Instantiate(hitEffectPrefab, collision.contacts[0].point, Quaternion.identity);
 
             Destroy(gameObject); 
