@@ -4863,7 +4863,6 @@ GameObject:
   - component: {fileID: 758837738}
   - component: {fileID: 758837737}
   - component: {fileID: 758837735}
-  - component: {fileID: 758837736}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -4898,21 +4897,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!138 &758837736
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758837734}
-  m_ConnectedBody: {fileID: 516832789}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 1
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!65 &758837737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6054,7 +6038,6 @@ GameObject:
   - component: {fileID: 933487667}
   - component: {fileID: 933487666}
   - component: {fileID: 933487665}
-  - component: {fileID: 933487664}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -6062,21 +6045,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!138 &933487664
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933487663}
-  m_ConnectedBody: {fileID: 600741713}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 1
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!54 &933487665
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10654,7 +10622,6 @@ GameObject:
   - component: {fileID: 1486161282}
   - component: {fileID: 1486161281}
   - component: {fileID: 1486161280}
-  - component: {fileID: 1486161279}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -10662,21 +10629,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!138 &1486161279
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486161278}
-  m_ConnectedBody: {fileID: 433609713}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 1
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!54 &1486161280
 Rigidbody:
   m_ObjectHideFlags: 0
