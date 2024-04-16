@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 [RequireComponent(typeof(CharacterController))]
 public class CharacterMovement : MonoBehaviour
@@ -11,15 +12,18 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] float pushPower = 2.0f;
     [SerializeField] float rotationRate = 2.0f;
     [SerializeField] Transform cameraView;
+    [SerializeField] Rig rig;
     private CharacterController controller;
     private Vector3 velocity;
     private bool onGround;
-    public Animator animator; // Reference to the Animator component
+
+
+    public Animator animator; 
 
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
-        animator = gameObject.GetComponent<Animator>(); // Initialize the Animator component
+        
     }
 
     void Update()
@@ -43,12 +47,10 @@ public class CharacterMovement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), Time.deltaTime * rotationRate);
         }
 
-        // Updating Animator parameters
-        animator.SetFloat("Speed", velocity.magnitude);
-        animator.SetFloat("YVal", velocity.y);
-        animator.SetBool("OnGround", onGround);
+      
        
-        // animator.SetBool("Equipped", isEquipped);
+        
+       
 
         // Jumping
         if (Input.GetButtonDown("Jump") && onGround)
@@ -58,6 +60,22 @@ public class CharacterMovement : MonoBehaviour
 
         velocity.y += Physics.gravity.y * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        if(Input.GetKey(KeyCode.E))
+        {
+            animator.SetBool("Equipped", !animator.GetBool("Equipped"));
+            rig.weight = (animator.GetBool("Equipped")) ? 1 : 0;
+            
+        }
+        
+
+        //animations
+        animator.SetFloat("Speed", move.magnitude * playerSpeed);
+        animator.SetFloat("YVal", velocity.y);
+        animator.SetBool("OnGround", onGround);
+
+
+
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
